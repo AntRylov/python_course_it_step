@@ -3,3 +3,12 @@
 #F_k = 2(F_k-1 - 50)
 #Напишите функцию get_number_of_frogs(year: int) -> int: которая будет считать количество лягушек в произвольный год
 
+
+def get_number_of_frogs(year: int, F_k_1=120) -> int:
+    if year == 1:
+        return F_k_1
+
+    return get_number_of_frogs(year - 1, 2 * (F_k_1 - 50))
+
+
+print(get_number_of_frogs(int(input())))
